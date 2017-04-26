@@ -19,9 +19,6 @@ test:
   database: health_test
 
 production:
-  <<: *mysql
+  <<: *default
   url: <%= ENV['CLEARDB_DATABASE_URL'] %>
   pool: <%= ENV["DB_POOL"] || ENV['RAILS_MAX_THREADS'] || 5 %>
-  database: health_production
-  username: <%= ENV["DB_USERNAME"] %>
-  password: <%= ENV["DB_PASSWORD"] %>
