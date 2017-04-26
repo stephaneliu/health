@@ -8,35 +8,33 @@
 #
 # And be sure to use new-style password hashing:
 #   http://dev.mysql.com/doc/refman/5.0/en/old-client.html
-development:
+mysql: &mysql
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: health_development
   pool: 5
   username: root
-  password: 
+  password:
   host: localhost
+
+default: &default
+ <<: *mysql
+
+development:
+  <<: *default
+  database: health_development
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
-  adapter: mysql2
-  encoding: utf8
-  reconnect: false
+  <<: *default
   database: health_test
-  pool: 5
-  username: root
-  password: 
-  host: localhost
 
 production:
-  adapter: mysql2
-  encoding: utf8
-  reconnect: false
-  database: health_production
-  pool: 5
-  username: root
-  password: 
-  host: localhost
+  <<: *mysql
+  url: <%= ENV['CLEARDB_DATABASE_URL'] %>
+  pool: <%= ENV["DB_POOL"] || ENV['RAILS_MAX_THREADS'] || 5 %>
+  database: recorder_production
+  username: <%= ENV["DB_USERNAME"] %>
+  password: <%= ENV["DB_PASSWORD"] %>
