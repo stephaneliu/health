@@ -17,6 +17,11 @@ mysql: &mysql
   password:
   host: localhost
 
+pg: &pg
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 }
+
 default: &default
  <<: *mysql
 
@@ -32,9 +37,8 @@ test:
   database: health_test
 
 production:
-  <<: *mysql
-  url: <%= ENV['CLEARDB_DATABASE_URL'] %>
-  pool: <%= ENV["DB_POOL"] || ENV['RAILS_MAX_THREADS'] || 5 %>
+  <<: *pg
+  url: <%= ENV['DATABASE_URL'] %>
   database: health_production
-  username: <%= ENV["DB_USERNAME"] %>
-  password: <%= ENV["DB_PASSWORD"] %>
+  username: health
+  password: <%= ENV["HEALTH_DATABASE_PASSWORD"] %>
