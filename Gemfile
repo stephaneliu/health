@@ -20,8 +20,6 @@ gem 'sass-rails', '~> 5.0'
 gem 'thin'
 gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
-gem 'griddler', github: "stephaneliu/griddler"
-gem 'griddler-cloudmailin'
 
 group :development do
   gem 'better_errors'
