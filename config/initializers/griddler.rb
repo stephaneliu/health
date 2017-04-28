@@ -1,5 +1,5 @@
 Griddler.configure do |config|
-  config.processor_class  = WeightLogViaEmail
+  config.processor_class  = WeightLogViaEmailService
   config.email_class      = Griddler::Email
   config.processor_method = :process
   config.reply_delimiter  = '-- REPLY ABOVE THIS LINE --'
