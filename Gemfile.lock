@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/stephaneliu/griddler.git
-  revision: be71d57fa2b892e6f762a81611c0d1c0afb66998
+  revision: b0aa72856abd9d7f24227f52de0554084654b1d3
   specs:
     griddler (1.4.0)
       htmlentities
@@ -158,7 +158,7 @@ GEM
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
     lumberjack (1.0.11)
-    mail (2.6.4)
+    mail (2.6.5)
       mime-types (>= 1.16, < 4)
     method_source (0.8.2)
     mime-types (3.1)
