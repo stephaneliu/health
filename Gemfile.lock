@@ -1,3 +1,12 @@
+GIT
+  remote: https://github.com/stephaneliu/griddler.git
+  revision: 86d2ea50f3bd4f3b3564032b78bb24d2977de2e8
+  branch: master
+  specs:
+    griddler (1.4.0)
+      htmlentities
+      rails (>= 3.2.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -96,9 +105,6 @@ GEM
     formatador (0.2.5)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
-    griddler (1.4.0)
-      htmlentities
-      rails (>= 3.2.0)
     griddler-cloudmailin (1.1.0)
       griddler
     guard (2.14.1)
@@ -318,7 +324,7 @@ DEPENDENCIES
   devise
   factory_girl_rails
   faker
-  griddler
+  griddler!
   griddler-cloudmailin
   guard-bundler
   guard-rails
