@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/stephaneliu/griddler.git
-  revision: b0aa72856abd9d7f24227f52de0554084654b1d3
+  revision: 0b9394264f6b709351602c6ceb1e20880c7d7a85
   specs:
     griddler (1.4.0)
       htmlentities
