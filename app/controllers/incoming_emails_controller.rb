@@ -1,8 +1,10 @@
 class IncomingEmailsController < ApplicationController
-  protect_from_forgery with: :null_session
+  skip_before_filter :verify_authenticity_token
 
   def create
-    Rails.logger.debug "### param: #{params.inspect}"
+
     Rails.logger.debug "### body content: #{params[:plain]}"
+    Rails.logger.debug "### subject: #{params[:subject]}"
+    Rails.logger.debug "### headers: #{params[:headers]}"
   end
 end
