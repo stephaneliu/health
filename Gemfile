@@ -27,7 +27,7 @@ group :development do
   gem 'guard-rails'
   gem 'guard-rspec'
   gem 'html2haml'
-  gem 'hub', :require=>nil
+  gem 'hub', require: nil
   gem 'listen', '~> 3.0.5'
   gem 'rails_layout'
   gem 'rb-fchange', :require=>false
@@ -43,7 +43,6 @@ group :test do
   gem 'capybara'
   gem 'database_cleaner'
   gem 'launchy'
-  gem 'selenium-webdriver'
 end
 
 group :development, :test do
