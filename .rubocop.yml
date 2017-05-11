@@ -1,5 +1,6 @@
 AllCops:
-  RunRailsCops: true
+  DisplayCopNames: true
+  DisplayStyleGuide: true
   Include:
     - '**/Gemfile'
     - '**/Rakefile'
@@ -8,3 +9,7 @@ AllCops:
    - 'db/seeds.rb'
    - 'db/schema.rb'
    - 'vendor/bundle/**/*'
+Rails:
+  Enabled: true
+Style/FrozenStringLiteralComment:
+  Enabled: false
