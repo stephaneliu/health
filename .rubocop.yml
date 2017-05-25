@@ -11,5 +11,7 @@ AllCops:
    - 'vendor/bundle/**/*'
 Rails:
   Enabled: true
+Metrics/LineLength:
+  Max: 100
 Style/FrozenStringLiteralComment:
   Enabled: false

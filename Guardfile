@@ -82,7 +82,7 @@ group :rgr, halt_on_fail: true do
     end
   end
 
-  guard :rubocop do
+  guard :rubocop, cli: ['--format', 'fuubar', '--display-cop-names'] do
     watch(%r{.+\.rb$})
     watch(%r{(?:.+/)?\.rubocop\.yml$}) { |m| File.dirname(m[0]) }
   end
