@@ -31,6 +31,7 @@ group :development do
   gem 'html2haml'
   gem 'hub', require: nil
   gem 'listen', '~> 3.0.5'
+  gem 'meta_request'
   gem 'rails_layout'
   gem 'rb-fchange', require: false
   gem 'rb-fsevent', require: false
@@ -53,5 +54,6 @@ group :development, :test do
   gem 'byebug', platform: :mri
   gem 'factory_girl_rails'
   gem 'faker'
+  gem 'pry-rails'
   gem 'rspec-rails'
 end
