@@ -31,15 +31,17 @@ group :development do
   gem 'html2haml'
   gem 'hub', require: nil
   gem 'listen', '~> 3.0.5'
-  gem 'meta_request'
+  gem 'meta_request' # rails log in Chrome
+  gem 'mutest-rspec'
   gem 'rails_layout'
   gem 'rb-fchange', require: false
   gem 'rb-fsevent', require: false
   gem 'rb-inotify', require: false
-  gem 'rubocop'
+  gem 'rubocop-rspec'
   gem 'spring'
   gem 'spring-commands-rspec'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'terminal-notifier-guard'
   gem 'web-console', '>= 3.3.0'
 end
 
@@ -47,7 +49,8 @@ group :test do
   gem 'capybara'
   gem 'database_cleaner'
   gem 'launchy'
-  gem 'shoulda-matchers', git: 'https://github.com/thoughtbot/shoulda-matchers.git', branch: 'rails-5'
+  gem 'shoulda-matchers', git: 'https://github.com/thoughtbot/shoulda-matchers.git',
+                          branch: 'rails-5'
 end
 
 group :development, :test do

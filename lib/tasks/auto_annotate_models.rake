@@ -5,7 +5,7 @@ if Rails.env.development?
   task :set_annotation_options do
     # You can override any of these by setting an environment variable of the
     # same name.
-    Annotate.set_defaults({
+    Annotate.set_defaults(
       'position_in_routes'   => "before",
       'position_in_class'    => "before",
       'position_in_test'     => "before",
@@ -26,8 +26,8 @@ if Rails.env.development?
       'format_markdown'      => "false",
       'sort'                 => "false",
       'force'                => "false",
-      'trace'                => "false",
-    })
+      'trace'                => "false"
+    )
   end
 
   Annotate.load_tasks

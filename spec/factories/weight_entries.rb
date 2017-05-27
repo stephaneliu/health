@@ -6,10 +6,14 @@
 #  date       :date             not null
 #  user_id    :integer          not null
 #  weight     :integer          not null
-#  unit_id    :integer          default("1")
+#  unit_id    :integer          default(1)
 #  bmi        :float(24)
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#
+# Indexes
+#
+#  index_weight_entries_on_user_id  (user_id)
 #
 
 FactoryGirl.define do

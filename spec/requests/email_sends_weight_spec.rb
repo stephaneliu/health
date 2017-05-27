@@ -1,5 +1,7 @@
+require 'rails_helper'
+
 RSpec.describe 'Email sends weight' do
-  it 'saves weight for user' do
+  it 'saves weight for user', :pending do
     expect { post '/incoming_emails' }.to change(WeightEntry.count).by(1)
   end
 

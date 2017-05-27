@@ -5,7 +5,6 @@ class WeightLogViaEmailService
     @email = email
   end
 
-
   def process
     Rails.logger.debug "## Email from: #{email.from[:email]}"
     Rails.logger.debug "## Email subject: #{email.subject}"

@@ -37,7 +37,13 @@ end
 #  * 'just' rspec: 'rspec'
 
 group :rgr, halt_on_fail: true do
-  guard :rspec, cmd: "bin/rspec" do
+  rspec_options = {
+    cmd: 'bin/rspec',
+    all_on_start: true,
+    all_after_pass: true,
+    failed_mode: :keep,
+  }
+  guard :rspec, rspec_options do
     require "guard/rspec/dsl"
     dsl = Guard::RSpec::Dsl.new(self)
 
@@ -54,7 +60,7 @@ group :rgr, halt_on_fail: true do
     dsl.watch_spec_files_for(ruby.lib_files)
 
     # Rails files
-    rails = dsl.rails(view_extensions: %w(erb haml slim))
+    rails = dsl.rails(view_extensions: %w[erb haml slim])
     dsl.watch_spec_files_for(rails.app_files)
     dsl.watch_spec_files_for(rails.views)
 
@@ -82,7 +88,12 @@ group :rgr, halt_on_fail: true do
     end
   end
 
-  guard :rubocop, cli: ['--format', 'fuubar', '--display-cop-names'] do
+  rubocop_cli = [
+    '--format', 'fuubar',
+    '--display-cop-names',
+  ]
+
+  guard :rubocop, cli: rubocop_cli do
     watch(%r{.+\.rb$})
     watch(%r{(?:.+/)?\.rubocop\.yml$}) { |m| File.dirname(m[0]) }
   end
