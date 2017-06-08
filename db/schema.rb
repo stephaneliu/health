@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170510074444) do
+ActiveRecord::Schema.define(version: 20170529063157) do
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "email",                  default: "", null: false
@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 20170510074444) do
   create_table "weight_entries", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.date     "date",                              null: false
     t.integer  "user_id",                           null: false
-    t.integer  "weight",                            null: false
+    t.float    "weight",     limit: 24,             null: false
     t.integer  "unit_id",               default: 1
     t.float    "bmi",        limit: 24
     t.datetime "created_at",                        null: false

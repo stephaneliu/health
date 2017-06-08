@@ -1,15 +1,12 @@
 class WeightLogViaEmailService
-  attr_reader :email
+  attr_reader :email, :parser
 
-  def initialize(email)
-    @email = email
+  def initialize(email:, parser: WeightParserService)
+    @email  = email
+    @parser = parser
   end
 
   def process
-    Rails.logger.debug "## Email from: #{email.from[:email]}"
-    Rails.logger.debug "## Email subject: #{email.subject}"
-    Rails.logger.debug "## Email body: #{email.body}"
-
-    render text: 'success', status: 200
+    parsed = parser.new(email).parse
   end
 end

@@ -6,7 +6,7 @@ class WeightParserService
   end
 
   def parse
-    { date: parse_date, weight: parse_weight, bmi: parse_bmi }
+    OpenStruct.new(date: parse_date, weight: parse_weight, bmi: parse_bmi)
   end
 
   private

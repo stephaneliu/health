@@ -5,7 +5,7 @@
 #  id         :integer          not null, primary key
 #  date       :date             not null
 #  user_id    :integer          not null
-#  weight     :integer          not null
+#  weight     :float(24)        not null
 #  unit_id    :integer          default(1)
 #  bmi        :float(24)
 #  created_at :datetime         not null
